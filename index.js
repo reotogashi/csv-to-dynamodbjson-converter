@@ -3,10 +3,10 @@ const fs = require('fs');
 const { marshall } = require('@aws-sdk/util-dynamodb');
 const csv = require('csvtojson');
 
-const INPUT_CSV_FILE_PATH_INDEX = 2;
-const OUTPUT_JSON_FILE_PATH_INDEX = 3;
-const inputCsvFilePath = process.argv[INPUT_CSV_FILE_PATH_INDEX];
-const outputJsonFilePath = process.argv[OUTPUT_JSON_FILE_PATH_INDEX];
+const INPUT_CSV_FILE_PATH_ARG_INDEX = 2;
+const OUTPUT_JSON_FILE_PATH_ARG_INDEX = 3;
+const inputCsvFilePath = process.argv[INPUT_CSV_FILE_PATH_ARG_INDEX];
+const outputJsonFilePath = process.argv[OUTPUT_JSON_FILE_PATH_ARG_INDEX];
 
 let formattedJson = '';
 
