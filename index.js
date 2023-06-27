@@ -10,6 +10,10 @@ const outputJsonFilePath = process.argv[OUTPUT_JSON_FILE_PATH_ARG_INDEX];
 
 let formattedJson = '';
 
+const isBoolean = (str) => {
+  return str.toLowerCase() === 'true';
+};
+
 // Delete output file if it already exists since the items will be appended if the file exists and results in data inconsistency.
 if (fs.existsSync(outputJsonFilePath)) {
   fs.unlinkSync(outputJsonFilePath);
@@ -28,7 +32,7 @@ csv()
       const newRow = {
         col1_str: String(row.col1_str),
         col2_num: Number(row.col2_num),
-        col3_num: Boolean(row.col3_bool),
+        col3_bool: isBoolean(row.col3_bool),
       };
 
       const ddbJson = {};
